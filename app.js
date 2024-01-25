@@ -14,8 +14,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true,  tls: true,
-  tlsCAFile: '/path/to/ca.crt',  });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true,   tls: true, 
+tlsInsecure: true });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
